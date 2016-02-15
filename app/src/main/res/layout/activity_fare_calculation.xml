@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FareCalculationActivity">
+
+    <include
+        android:id="@+id/calculation_toolbar"
+        layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/calculation_toolbar"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <ImageView
+            android:id="@+id/selectedVehicleImage"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/uber" />
+
+        <Button
+            android:id="@+id/minFareButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:background="#00CCCC"
+            android:text="Minimum Fare"
+            android:textColor="@color/iconText"
+
+            />
+
+        <EditText
+            android:id="@+id/kmInputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="kilometers traveled"
+            android:inputType="numberDecimal"
+            android:textColor="@color/secondaryText"
+            android:theme="@style/editTextStyle" />
+
+        <EditText
+            android:id="@+id/timeInputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:hint="travel time in minutes"
+            android:inputType="numberDecimal"
+            android:textColor="@color/secondaryText"
+            android:theme="@style/editTextStyle" />
+
+        <Button
+            android:id="@+id/calculateFareButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:text="Calculate Fare"
+            android:textColor="@color/iconText" />
+    </LinearLayout>
+
+
+</RelativeLayout>

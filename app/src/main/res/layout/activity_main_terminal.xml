@@ -1,69 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:elevation="7dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include android:id="@+id/toolbar"
-            layout ="@layout/app_bar"/>
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/app_bar" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <ImageButton
-                android:id="@+id/profileSettings"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="10dp"
-                android:background="@null"
-                android:scaleType="fitXY"
-                android:src="@drawable/profile" />
-
-            <TextView
-                android:id="@+id/profileNameText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_toEndOf="@id/profileSettings"
-                android:text="Name"
-                android:textSize="30sp" />
-
-            <ImageButton
-                android:id="@+id/settingsButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/profileSettings"
-                android:background="@null"
-                android:scaleType="fitXY"
-                android:src="@drawable/settings" />
-
-            <Button
-                android:id="@+id/resetButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@id/settingsButton"
-                android:background="@color/colorAccent"
-                android:text="Reset"
-                android:textColor="#FFFFFF" />
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
 
             <TextView
                 android:id="@+id/fareText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/settingsButton"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:text="00.00"
+                android:textColor="@color/primaryText"
                 android:textSize="100sp" />
 
             <TextView
@@ -73,84 +39,159 @@
                 android:layout_below="@id/fareText"
                 android:layout_centerHorizontal="true"
                 android:text="PHP"
+                android:textColor="@color/secondaryText"
                 android:textSize="40sp" />
 
         </RelativeLayout>
 
-        <LinearLayout
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/multiple_actions"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            fab:menu_animationDelayPerItem="20"
+            fab:menu_backgroundColor="@android:color/transparent"
+            fab:menu_colorNormal="#DA4336"
+            fab:menu_colorPressed="#E75043"
+            fab:menu_colorRipple="#99FFFFFF"
+            fab:menu_fab_size="normal"
+            fab:menu_icon="@drawable/ic_add"
+            fab:menu_labels_colorNormal="#FFFFFF"
+            fab:menu_labels_colorPressed="#444444"
+            fab:menu_labels_colorRipple="#66FFFFFF"
+            fab:menu_labels_padding="8dp"
+            fab:menu_labels_position="left"
+            fab:menu_labels_showShadow="true"
+            fab:menu_labels_textColor="#333333"
+            fab:menu_openDirection="up"
+            fab:menu_shadowColor="#66000000"
+            fab:menu_showShadow="true">
 
-            <ImageButton
-                android:id="@+id/taxiButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@color/taxi"
-                android:scaleType="fitCenter"
-                android:src="@drawable/taxi" />
-
-            <ImageButton
+            <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/tricycleButton"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@color/tricycle"
-                android:scaleType="fitCenter"
-                android:src="@drawable/tricycle" />
-        </LinearLayout>
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_tricycle"
+                fab:fab_colorNormal="@color/tricycle"
+                fab:fab_colorPressed="#444444"
+                fab:fab_colorRipple="#99FFFFFF"
+                fab:fab_label="Tricycle"
+                fab:fab_size="normal" />
 
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/taxiButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_taxi"
+                fab:fab_colorNormal="@color/taxi"
+                fab:fab_colorPressed="#444444"
+                fab:fab_colorRipple="#99FFFFFF"
+                fab:fab_label="Taxi"
+                fab:fab_size="normal" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="2">
-
-            <ImageButton
+            <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/jeepButton"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@color/jeep"
-                android:scaleType="fitCenter"
-                android:src="@drawable/jeep" />
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_jeep"
+                fab:fab_colorNormal="@color/jeep"
+                fab:fab_colorPressed="#444444"
+                fab:fab_colorRipple="#99FFFFFF"
+                fab:fab_label="Jeep"
+                fab:fab_size="normal" />
 
-            <ImageButton
+            <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/uberButton"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@color/uber"
-                android:scaleType="fitCenter"
-                android:src="@drawable/uber" />
-        </LinearLayout>
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_uber"
+                fab:fab_colorNormal="@color/uber"
+                fab:fab_colorPressed="#444444"
+                fab:fab_colorRipple="#99FFFFFF"
+                fab:fab_label="Uber"
+                fab:fab_size="normal" />
+
+        </com.github.clans.fab.FloatingActionMenu>
+        <!-- <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:weightSum="2">
+             <ImageButton
+                 android:id="@+id/taxiButton"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="2dp"
+                 android:layout_weight="1"
+                 android:background="@color/taxi"
+                 android:scaleType="fitCenter"
+                 android:src="@drawable/taxi" />
+
+             <ImageButton
+                 android:id="@+id/tricycleButton"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="2dp"
+                 android:layout_weight="1"
+                 android:background="@color/tricycle"
+                 android:scaleType="fitCenter"
+                 android:src="@drawable/tricycle" />
+         </LinearLayout>
 
 
-    </LinearLayout>
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:weightSum="2">
 
+             <ImageButton
+                 android:id="@+id/jeepButton"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="2dp"
+                 android:layout_weight="1"
+                 android:background="@color/jeep"
+                 android:scaleType="fitCenter"
+                 android:src="@drawable/jeep" />
+
+             <ImageButton
+                 android:id="@+id/uberButton"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="2dp"
+                 android:layout_weight="1"
+                 android:background="@color/uber"
+                 android:scaleType="fitCenter"
+                 android:src="@drawable/uber" />
+         </LinearLayout>
+ -->
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        fab:headerLayout="@layout/header"
+        fab:menu="@menu/drawer" />
     <!-- from previous inelegant implementation-->
-    <android.support.v7.widget.RecyclerView
+    <!--<android.support.v7.widget.RecyclerView
         android:id="@+id/RecyclerView"
         android:layout_width="@dimen/nav_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="#ffffff"
         android:scrollbars="vertical">
-    </android.support.v7.widget.RecyclerView>
-    <!--<fragment
-        android:id="@+id/nav_draw_fragment"
-        android:layout_width="@dimen/nav_drawer_width"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:name="com.example.francis.blitzcommute.NavigationDrawerFragment"
-        app:layout="@layout/fragment_navigation_drawer"
-        tools:layout="@layout/fragment_navigation_drawer" />-->
+    </android.support.v7.widget.RecyclerView>-->
 
 
 </android.support.v4.widget.DrawerLayout>

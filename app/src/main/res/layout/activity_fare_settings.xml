@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".FareSettingsActivity">
+
+    <include
+        android:id="@+id/settings_toolbar"
+        layout="@layout/app_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tricycleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="Tricycle"
+                    android:textColor="@color/primaryText"
+                    android:textSize="20sp" />
+
+                <Switch
+                    android:id="@+id/tricycleSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignTop="@id/tricycleText" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/jeepText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="Jeep"
+                    android:textColor="@color/primaryText"
+                    android:textSize="20sp" />
+
+                <Switch
+                    android:id="@+id/jeepSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@id/jeepText" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/taxiText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="Taxi"
+                    android:textColor="@color/primaryText"
+                    android:textSize="20sp" />
+
+                <Switch
+                    android:id="@+id/taxiSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@id/taxiText" />
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/space1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/divider" />
+
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tricycle Rates"
+                android:textColor="@color/primaryText"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/triPPK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:ems="8"
+                android:hint="@string/peso_per_km"
+                android:inputType="numberDecimal"
+                android:theme="@style/editTextStyle" />
+
+            <EditText
+                android:id="@+id/triPPT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:ems="8"
+                android:hint="@string/peso_per_min"
+                android:inputType="numberDecimal"
+                android:theme="@style/editTextStyle" />
+
+
+            <View
+                android:id="@+id/space2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/divider" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jeep Rates"
+                android:textColor="@color/primaryText"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/jeepPPK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:ems="8"
+                android:hint="@string/peso_per_km"
+                android:inputType="numberDecimal"
+                android:theme="@style/editTextStyle" />
+
+            <EditText
+                android:id="@+id/jeepPPT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:ems="8"
+                android:hint="@string/peso_per_min"
+                android:inputType="numberDecimal"
+                android:theme="@style/editTextStyle" />
+
+
+            <View
+                android:id="@+id/space3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/divider" />
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:text="Taxi Rates"
+                android:textColor="@color/primaryText"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/taxiPPK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:ems="8"
+                android:hint="@string/peso_per_km"
+                android:inputType="numberDecimal"
+                android:theme="@style/editTextStyle" />
+
+            <EditText
+                android:id="@+id/taxiPPT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:ems="8"
+                android:hint="@string/peso_per_min"
+                android:inputType="numberDecimal"
+                android:theme="@style/editTextStyle" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

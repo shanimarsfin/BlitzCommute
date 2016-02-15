@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group_drawer_items"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/edit_profile_item"
+            android:checked="false"
+            android:icon="@drawable/ic_account_circle"
+            android:title="@string/edit_profile" />
+
+    </group>
+
+    <group
+        android:id="@+id/group_fare_menu"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/fare_settings_item"
+            android:checked="false"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/fare_settings" />
+
+        <item
+            android:id="@+id/reset_fare_item"
+            android:checked="false"
+            android:icon="@drawable/ic_cached"
+            android:title="@string/reset_fare" />
+    </group>
+</menu>
